@@ -7,7 +7,7 @@ var transporter = nodemailer.createTransport({
     port: 465,
     secure: true, 
     auth: {
-        user: `workhkj4@gmail.com`,
+        user: `${process.env.SENDER}`,
         pass: `${process.env.PASSWORD}`
     }
 });
