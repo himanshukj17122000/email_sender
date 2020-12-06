@@ -1,13 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors= require('cors');
 var nodemailer = require('nodemailer');
 const PORT = process.env.PORT || 5000;
 var transporter = nodemailer.createTransport({
     service: 'gmail', //process.env.SERVICE_PROVIDER,
     auth: {
-        user: 'devconnecthkj@gmail.com',
-        pass: 'Himanshu17december'
+        user: `${process.env.SENDER}`,
+        pass: `${process.env.PASSWORD}`
     }
 });
 // create express app
@@ -15,7 +14,6 @@ const app = express();
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
-// app.use(cors())
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
 
