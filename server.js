@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
+const cors = require('cors');
 const PORT = process.env.PORT || 5000;
 var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -26,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // define a simple route
-app.post('/', async (req, res) => {
+app.post('/', cors(), async (req, res) => {
     try{
     const mailOptions = {
         from: process.env.SENDER, // sender address
@@ -49,7 +50,7 @@ app.post('/', async (req, res) => {
 });
 
 // define a simple route
-app.post('/weekly', async (req, res) => {
+app.post('/weekly',cors(), async (req, res) => {
     try{
     const mailOptions = {
         from: process.env.SENDER, // sender address
