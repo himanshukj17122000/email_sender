@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors= require('cors')
 var nodemailer = require('nodemailer');
 const PORT = process.env.PORT || 5000;
 var transporter = nodemailer.createTransport({
@@ -21,7 +20,6 @@ var transporter = nodemailer.createTransport({
 // });
 // create express app
 const app = express();
-app.use(cors())
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 // parse requests of content-type - application/json
