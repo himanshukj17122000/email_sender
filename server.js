@@ -56,7 +56,7 @@ app.post('/weekly',cors(), async (req, res) => {
         from: process.env.SENDER, // sender address
         to: req.body.email, // list of receivers
         subject: 'Your weekly words are in!', // Subject line
-        html: `<p>`+req.body.data+`</p>`, // plain text body
+        html: req.body.data, // plain text body
         replyTo: process.env.SENDER
     };
 
