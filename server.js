@@ -35,7 +35,7 @@ app.post('/', async (req, res) => {
         else
             console.log(info);
     });
-    res.json({"message":process.env.PASSWORD });
+    res.json({"message":"Email sent"});
 } catch(err){
     console.error(err.message);
     res.status(500).send('Server error');
