@@ -21,20 +21,20 @@ app.use(bodyParser.json())
 // define a simple route
 app.post('/', async (req, res) => {
     try{
-    const mailOptions = {
-        from: process.env.SENDER, // sender address
-        to: req.body.email, // list of receivers
-        subject: 'Thanks for joining in!', // Subject line
-        html: `<p>Welcome to the app, Himanshu! Let me know how you get along with the app. </p>`, // plain text body
-        replyTo: process.env.SENDER
-    };
+    // const mailOptions = {
+    //     from: process.env.SENDER, // sender address
+    //     to: req.body.email, // list of receivers
+    //     subject: 'Thanks for joining in!', // Subject line
+    //     html: `<p>Welcome to the app, Himanshu! Let me know how you get along with the app. </p>`, // plain text body
+    //     replyTo: process.env.SENDER
+    // };
 
-    await transporter.sendMail(mailOptions, function (err, info) {
-        if (err)
-            console.log(err)
-        else
-            console.log(info);
-    });
+    // await transporter.sendMail(mailOptions, function (err, info) {
+    //     if (err)
+    //         console.log(err)
+    //     else
+    //         console.log(info);
+    // });
     res.json({"message": "Email sent"});
 } catch(err){
     console.error(err.message);
