@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 const PORT = process.env.PORT || 5000;
 var transporter = nodemailer.createTransport({
-    host: 'smtp.outlook.com',
+    host: 'smtp-mail.outlook.com',
     port: 465,
     secure: true, 
     auth: {
