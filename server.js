@@ -5,8 +5,8 @@ const PORT = process.env.PORT || 5000;
 var transporter = nodemailer.createTransport({
     service: 'gmail', //process.env.SERVICE_PROVIDER,
     auth: {
-        user: "devconnecthkj@gmail.com",
-        password: "Himanshu17december"
+        user: 'devconnecthkj@gmail.com',
+        pass: 'Himanshu17december'
     }
 });
 // create express app
