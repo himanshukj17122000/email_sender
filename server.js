@@ -7,7 +7,7 @@ var transporter = nodemailer.createTransport({
     service: 'gmail', //process.env.SERVICE_PROVIDER,
     auth: {
         user: 'devconnecthkj@gmail.com',
-        pass: `Himanshu17december`
+        pass: 'Himanshu17december'
     }
 });
 // create express app
