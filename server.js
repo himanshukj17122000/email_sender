@@ -45,20 +45,20 @@ app.post('/', async (req, res) => {
 // define a simple route
 app.post('/weekly', async (req, res) => {
     try{
-    const mailOptions = {
-        from: process.env.SENDER, // sender address
-        to: req.body.email, // list of receivers
-        subject: 'Your weekly words are in!', // Subject line
-        html: `<p>`+req.body.data+`</p>`, // plain text body
-        replyTo: process.env.SENDER
-    };
+    // const mailOptions = {
+    //     from: process.env.SENDER, // sender address
+    //     to: req.body.email, // list of receivers
+    //     subject: 'Your weekly words are in!', // Subject line
+    //     html: `<p>`+req.body.data+`</p>`, // plain text body
+    //     replyTo: process.env.SENDER
+    // };
 
-    await transporter.sendMail(mailOptions, function (err, info) {
-        if (err)
-            console.log(err)
-        else
-            console.log(info);
-    });
+    // await transporter.sendMail(mailOptions, function (err, info) {
+    //     if (err)
+    //         console.log(err)
+    //     else
+    //         console.log(info);
+    // });
     res.json({"message": "Email sent"});
 } catch(err){
     console.error(err.message);
