@@ -5,8 +5,8 @@ const PORT = process.env.PORT || 5000;
 var transporter = nodemailer.createTransport({
     service: 'gmail', //process.env.SERVICE_PROVIDER,
     auth: {
-        user: process.env.SENDER,
-        pass: process.env.PASSWORD
+        user: `${process.env.SENDER}`,
+        pass: `${process.env.PASSWORD}`
     }
 });
 // create express app
@@ -35,7 +35,7 @@ app.post('/', async (req, res) => {
         else
             console.log(info);
     });
-    res.json({"message":process.env.SENDER });
+    res.json({"message":process.env.PASSWORD });
 } catch(err){
     console.error(err.message);
     res.status(500).send('Server error');
