@@ -25,9 +25,9 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
-
+app.options('*', cors())
 // define a simple route
-app.post('/', cors(), async (req, res) => {
+app.post('/', cors(), (req, res) => {
     try{
     const mailOptions = {
         from: process.env.SENDER, // sender address
